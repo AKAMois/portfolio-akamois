@@ -176,23 +176,23 @@ div{
    font-size: 64px;
 }
 .enlaces >a::before, .social >a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--color-verde);
-  border-radius: 3px;
-  opacity: 0.5;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) scaleY(0);
-  transition: all 0.4s;
+  content: ""; /* Obligatorio para que el pseudoelemento exista, aunque esté vacío */
+  position: absolute; /* Lo posiciona respecto al padre, necesita position:relative en el padre */
+  width: 0; /* Sin ancho para activar el truco del triángulo con borders */
+  height: 0; /* Sin alto, mismo motivo */
+  border-left: 10px solid transparent; /* Lado izquierdo del triángulo, invisible */
+  border-right: 10px solid transparent; /* Lado derecho del triángulo, invisible */
+  border-bottom: 10px solid var(--color-verde); /* La cara visible, apunta hacia arriba */
+  border-radius: 3px; /* Redondea ligeramente las esquinas */
+  opacity: 0.5; /* Semitransparente, más sutil */
+  top: 100%; /* Lo coloca justo debajo del texto del enlace */
+  left: 50%; /* Lo mueve al centro desde su borde izquierdo */
+  transform: translateX(-50%) scaleY(0); /* Centra y aplana hasta hacerlo invisible */
+  transition: all 0.4s; /* Cualquier cambio ocurre suavemente en 0.4s */
 }
 
-.enlaces >a:hover::before,  .social >a:hover::before{
-  transform: translateX(-50%) scaleY(1);
+.enlaces >a:hover::before, .social >a:hover::before {
+  transform: translateX(-50%) scaleY(1); /* Al hover, crece de 0 a tamaño real */
 }
 
 }
