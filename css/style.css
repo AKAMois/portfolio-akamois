@@ -175,7 +175,7 @@ div{
   margin-right: 100px;
    font-size: 64px;
 }
-a::before {
+.enlaces >a::before, .social >a::before {
   content: "";
   position: absolute;
   width: 0;
@@ -191,7 +191,7 @@ a::before {
   transition: all 0.4s;
 }
 
-a:hover::before {
+.enlaces >a:hover::before,  .social >a:hover::before{
   transform: translateX(-50%) scaleY(1);
 }
 
