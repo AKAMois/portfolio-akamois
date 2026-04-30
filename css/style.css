@@ -51,6 +51,7 @@ header{
 }
 a{
     text-decoration: none;
+    position: relative;
     color: var(--color-tinta);
 }
 
@@ -67,9 +68,6 @@ h1{
 .fraseh1{
     color: var(--color-madera);
     margin-left: 100px;
-}
-.social > a:hover{
-    color: var(--color-verde);
 }
 .hero{
     margin-top: 150px;
@@ -177,12 +175,24 @@ div{
   margin-right: 100px;
    font-size: 64px;
 }
-a {
-    text-decoration: none;
-    color: var(--color-tinta);
-    transition: color 0.3s;
+a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--color-verde);
+  border-radius: 3px;
+  opacity: 0.5;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  transition: all 0.4s;
 }
 
-a:hover {
-    color: var(--color-verde);
-}}
+a:hover::before {
+  transform: translateX(-50%) scaleY(1);
+}
+
+}
