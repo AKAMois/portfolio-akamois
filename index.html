@@ -103,7 +103,21 @@
     </section>
 
  </main>
+<svg class="curzr-motion" hidden>
+  <!-- El elemento SVG que hace de cursor. 'hidden' lo oculta hasta que JS lo activa -->
   
+  <filter id="motionblur" x="-100%" y="-100%" width="400%" height="400%">
+    <!-- Define un filtro SVG. El área es grande para que el blur no se corte en los bordes -->
+    
+    <feGaussianBlur class="curzr-motion-blur" stdDeviation="0, 0" />
+    <!-- El efecto de desenfoque. stdDeviation controla la intensidad: "X, Y" -->
+    <!-- Empieza en 0,0 (sin blur). JS lo cambia cuando el ratón se mueve -->
+  </filter>
+  
+  <circle cx="50%" cy="50%" r="5" fill="#2D5016" filter="url(#motionblur)" />
+  <!-- El círculo verde. cx y cy lo centran dentro del SVG -->
+  <!-- r="5" es el radio. filter aplica el blur definido arriba -->
+</svg>
  <script src="js/script.js"></script>
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>

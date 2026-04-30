@@ -16,6 +16,21 @@
    *::-webkit-scrollbar{
         display: none;
     }
+ * {
+    cursor: none; /* Oculta el cursor nativo del navegador en toda la página */
+}
+
+.curzr-motion {
+    position: fixed; /* Se queda fijo en pantalla, no se mueve con el scroll */
+    top: 0;
+    left: 0; /* Posición base, JS lo moverá con translate3d */
+    width: 15px;
+    height: 15px; /* Tamaño del área del cursor */
+    pointer-events: none; /* No intercepta clicks ni hover, la página funciona normal */
+    z-index: 9999; /* Siempre encima de todo */
+    overflow: visible; /* Permite que el blur se vea fuera del área del SVG */
+    transition: transform 200ms; /* Suaviza el movimiento del cursor */
+}
 
 body {
     background-color: var(--color-fondo);
