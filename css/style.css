@@ -77,6 +77,8 @@ h1{
 }
 .about{
     width: 100%;
+     height: 100%;
+    padding-bottom: 100px;
 }
 
 
@@ -158,9 +160,11 @@ div{
     align-items: center;
     margin-top: 16px;
     padding-bottom: 40px;
+    color:var(--color-madera)
 }
 .email{
     text-align: center;
+    color: var(--color-madera);
 }
  .social {
     margin-top: 50px;
